@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath} 
+\begin{document}
+\begin{flushleft}
+\textbf{\Large CS229, Fall 2018\\Problem Set \#0 Solutions: Linear Algebra and Multivariable Calculus}
+\end{flushleft}
+\noindent\rule{\linewidth}{0.4pt}  % Horizontal line across the page
+\vspace{1em}
+1. \\
+(a) \[\nabla f(x) = \nabla \left( \frac{1}{2} x^T A x + b^T x \right) = A x + b\]\\
+(b) \[\frac{\partial \left( g(h(x)) \right)}{\partial x_i} = \frac{\partial g(h(x))}{\partial h(x)} \cdot \frac{\partial h(x)}{\partial x_i} = g'(h(x)) \cdot \frac{\partial h(x)}{\partial x_i}\]\[\ \nabla f(x)=\nabla g(h(x))= g'(h(x))\cdot \nabla h(x) \]\\
+(c) \[\nabla f(x) = \nabla \left( \frac{1}{2} x^T A x + b^T x \right) = A x + b\]\[ \nabla (Ax+b)= A \]
+(d) \[\nabla f(x) = \nabla g(a^T x) = g'(a^T x) \cdot \nabla a^T x = g'(a^T x) \cdot a\]
+\[\frac{\partial^2 \left( g(a^T x) \right)}{\partial x_i \partial x_j} = \frac{\partial^2 g(a^T x)}{\partial (a^T x)^2} \cdot \frac{\partial a^T x}{\partial x_i} \cdot \frac{\partial a^T x}{\partial x_j} = g''(a^T x) \cdot \frac{\partial a^T x}{\partial x_i} \cdot \frac{\partial a^T x}{\partial x_j}\]
+\[g''(a^T x) \cdot a_i \cdot a_j = g''(a^T x) \cdot\left[ 
+\begin{matrix}
+a_{11} & a_{12} & a_{13} & \ldots & a_{1n} \\
+a_{21} & a_{22} & a_{23} & \ldots & a_{2n} \\
+\vdots  & \vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & a_{n3} & \ldots & a_{nn} \\
+\end{matrix}
+\right]=g''(a^T x) \cdot (a^Ta)
+\]
+\noindent\rule{\linewidth}{0.05pt}
+2. \\
+(a) \[A^T=(zz^T)^T=(z^Tz)=zz^T=A\] \[x^TAx=x^Tzz^Tx=(x^Tz(x^Tz)^T)=(x^Tz)^2 \geq 0 \]
+(b) \[Am=(zz^T)m=z(z^Tm)\]\[Am=0 \iff z^Tm=0 \]\[N(A)=\{m \in \mathbf{R}^n:m^Tz=0\}\]
+(c) \[(BAB^T)^T=(B^T)^TA^TB^T=BA^TB^T=(BAB^T)\]\[x^TBAB^Tx=x^TBA(x^TB)^T\geq 0\]
+\vspace{1em}    
+\noindent\rule{\linewidth}{0.05pt}
+\newpage
+3. \\
+(a) \[A =T\Lambda T^{-1}\]\[AT=T\Lambda\]\[A\left[ \begin{matrix}
+    t^{(1)} & t^{(2)} & t^{(3)} & \ldots & t^{(n)}
+\end{matrix}\right]=\left[ \begin{matrix}
+    t^{(1)} & t^{(2)} & t^{(3)} & \ldots & t^{(n)}
+\end{matrix} \right]\left[ \begin{matrix}
+    \lambda_1 & 0 & 0 &\ldots & 0\\
+    0 & \lambda_2 & 0 &\ldots & 0\\
+    0 & 0 & \lambda_3 &\ldots & 0\\
+    \vdots & \vdots& \vdots & \ddots & \vdots\\
+    0 & 0 & 0 & \ldots & \lambda_n\\
+\end{matrix} \right] \]
+\[\left[ \begin{matrix}
+    At^{(1)} & At^{(2)} & At^{(3)} & \ldots & At^{(n)}
+\end{matrix}\right]=\left[ \begin{matrix}
+    \lambda_1t^{(1)} & \lambda_2t^{(2)} & \lambda_3t^{(3)} & \ldots & \lambda_nt^{(n)}
+\end{matrix}\right]\]
+\[At^{i}=\lambda_it^{(i)}\]\\
+b. \[A=U\Lambda U^T\]\[AU=U\Lambda U^TU=U\Lambda\]\[
+A\begin{bmatrix}
+    u_{(1)} & u_{(2)} & \ldots u_{(n)}  
+\end{bmatrix}=\begin{bmatrix}
+    u_{(1)} & u_{(2)} & \ldots u_{(n)}  
+\end{bmatrix} \begin{bmatrix}
+    \lambda_{1} & 0 & 0 & \ldots & 0 \\
+    0 & \lambda_{2} & 0 & \ldots & 0 \\
+    \vdots & \vdots & \vdots & \ddots & \vdots  \\
+    0 & 0 & 0 & \ldots & \lambda_{n} \\
+\end{bmatrix}
+\]
+\[\begin{bmatrix}
+    Au_{(1)} & Au_{(2)} & \ldots Au_{(n)}  
+\end{bmatrix}=\begin{bmatrix}
+    \lambda_{1} u_{(1)} & \lambda_{2}u_{(2)} & \ldots \lambda_{n}u_{(n)}  
+\end{bmatrix}\]
+\[Au^{(i)}=\lambda u^{(i)}\]\\
+c. \[At_{(i)}=\lambda_{(i)}t^{(i)}\]
+\[(t^{(i)})^TAt_{(i)}=\lambda_{(i)}||t^{(i)}||^2\geq0\]
+\end{document}
+
